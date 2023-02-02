@@ -46,7 +46,9 @@ describe Array do
     end
 
     it "should have the same number of columns as the original" do
-      expect(array.my_transpose).to all(should have(3).items)
+      array.my_transpose.each do |row|
+        expect(row.count).to eq(3)
+      end
     end
 
     it "should not change position [0,0], [1, 1], or [2,2]" do
